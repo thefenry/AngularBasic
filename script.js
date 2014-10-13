@@ -1,12 +1,12 @@
 
-var myApp = angular.module('spicyApp1', []);
+var myApp = angular.module('githubViewer', []);
 
 myApp.controller('MainController', ['$scope', function($scope) {
   
   var person = {
     firstName:"Ivan",
     lastName:"Sued",
-    imageSrc: "https://github.com/thefenry?tab=repositories"
+    imageSrc: "https://avatars.githubusercontent.com/u/5784034?v=2"
   };
   
     $scope.message = "Hello, Angular";
