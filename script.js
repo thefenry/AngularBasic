@@ -1,14 +1,26 @@
 
-var myApp = angular.module('githubViewer', []);
-
-myApp.controller('MainController', ['$scope', function($scope) {
+(function(){
   
-  var person = {
-    firstName:"Ivan",
-    lastName:"Sued",
-    imageSrc: "https://avatars.githubusercontent.com/u/5784034?v=2"
+  var myApp = angular.module('githubViewer', []);
+  
+  var MainController = function($scope, $http){
+   
+   var onUserComplete = function(response){
+     $scope.user = response.data;
+   };
+   
+   var onError = function(reason){
+     $scope.error = "Could not fetch the user";
+   };
+   
+   $http.get("https://api.github.com/users/thefenry")
+   .then(onUserComplete, onError);
+   
+   $scope.message = "Hello, Angular!";
+   
   };
   
-    $scope.message = "Hello, Angular";
-    $scope.person = person;
-}]);
+  myApp.controller('MainController', ["$scope", "$http", MainController]);
+  
+  
+}());

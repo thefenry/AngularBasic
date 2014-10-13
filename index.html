@@ -10,12 +10,13 @@
   <body ng-controller="MainController">
     <h1>{{message}}</h1>
     
-    <div>First Name: {{person.firstName}}</div>
-    <div>Last Name: {{person.lastName}}</div>
+    <div>First Name: {{user.name}}</div>
+    <div>Email: {{user.email}}</div>
     <div>
-      <img ng-src="{{person.imageSrc}}" title="{{person.firstName}} {{person.lastName}}">
+      <img ng-src="{{user.avatar_url}}" title="{{user.name}}">
     </div>
     
   </body>
 
 </html>
+
