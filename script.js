@@ -9,8 +9,8 @@
       github.getRepos($scope.user).then(onRepos, onError)
     };
 
-    var onRepos = function(response) {
-      $scope.repos = response.data;
+    var onRepos = function(data) {
+      $scope.repos = data;
       $location.hash("userDetails");
       $anchorScroll();
     }
