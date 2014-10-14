@@ -11,12 +11,14 @@
   <h1>{{message}}</h1>
 
   <div>{{error}}</div>
-
+  
+  {{countdown}}
+  
   <form name="searchUser" ng-submit="search(username)">
     <input type="search" required placeholder="Username to find" ng-model="username" />
     <input type="submit" value="Search" />
   </form>
-  
+
   <div ng-include="'userDetails.html'" ng-show="user"></div>
 </body>
 
