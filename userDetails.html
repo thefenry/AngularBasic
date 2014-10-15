@@ -1,6 +1,6 @@
-<div id="userDetails">
+<div>
     <h2>First Name: {{user.name}}</h2>
-    <h2>Email: {{user.email}}</h2>
+    {{error}}
     <img ng-src="{{user.avatar_url}}" title="{{user.name}}">
   </div>
 
@@ -23,10 +23,12 @@
       </thead>
       <tbody>
         <tr ng-repeat="repo in repos | orderBy:repoSortOrder">
-          <td>{{repo.name}}</td>
+          <td><a href="#/repo/{{user.login}}/{{repo.name}}">{{repo.name}}</a></td>
           <td>{{repo.stargazers_count | number}}</td>
           <td>{{repo.language}}</td>
         </tr>
       </tbody>
     </table>
   </div>
+  
+  <a href="#/main">Back to search</a>
