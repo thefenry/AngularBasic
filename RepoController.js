@@ -12,7 +12,6 @@
       $scope.error = reason;
     };
 
-
     var reponame = $routeParams.reponame;
     var username = $routeParams.username;
 
